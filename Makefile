@@ -58,3 +58,18 @@ fclean: clean
 	@ rm -f $(NAME)
 
 re: fclean all
+
+test: $(name)
+	@ echo "\n ===== \033[0;32m DEGREE 0 - All Real Number Solution \033[0m ===== \n"
+	./$(NAME) -v "5 * X^0 = 5 * X^0"
+	@ echo "\n ===== \033[0;32m DEGREE 0 - No Solution \033[0m ===== \n"
+	./$(NAME) -v "4X^0 = 8X^0"
+	@ echo "\n ===== \033[0;32m DEGREE 1 \033[0m ===== \n"
+	./$(NAME) -v "5 = 4 + 7X"
+	@ echo "\n ===== \033[0;32m DEGREE 2 - Discriminant > 0 \033[0m ===== \n"
+	./$(NAME) -v "5 + 13X + 3X^2 = 1 + 0X"
+	@ echo "\n ===== \033[0;32m DEGREE 2 - Discriminant = 0 \033[0m ===== \n"
+	./$(NAME) -v "6 + 11X + 5X^2 = 1 + X^1"
+	@ echo "\n ===== \033[0;32m DEGREE 2 - Discriminant < 0 \033[0m ===== \n"
+	./$(NAME) -v "5 + 3X + 3X^2 = 1 + X^1"
+	@ echo
