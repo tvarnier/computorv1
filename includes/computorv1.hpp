@@ -11,6 +11,8 @@
 # include <iterator>
 # include <limits>
 # include <cstring>
+# include <iomanip>
+# include <sstream>
 
 using namespace std;
 using namespace lib;

@@ -2,6 +2,10 @@
 # define LIB_HPP
 
 # include <iostream>
+# include <cstdlib>
+# include <fstream>
+# include <iostream>
+# include <vector>
   using namespace std;
 
 # define RESET      "\033[0m"
@@ -30,6 +34,25 @@
 
 namespace lib
 {
+    // =====  TESTER  ===== //
+
+    class   ProgramTester
+    {
+        public:
+            ProgramTester( std::string testName, std::string executableName );
+            ProgramTester( std::string testName, std::string executableName, std::vector<std::vector<std::string>> test);
+
+            void    setTest( std::vector<std::string> test );
+            void    setTests( std::vector<std::vector<std::string>> test );
+
+            void    executeTests();
+
+        private:
+            std::string     m_testName;
+            std::string     m_executableName;
+            std::vector<std::vector<std::string>>  m_tests;
+    };
+
     // =====  MATH  ===== //
 
     double  fabs(double nbr);

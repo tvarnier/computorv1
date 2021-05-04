@@ -1,6 +1,6 @@
 NAME		= computor
 
-CC			= g++-9
+CC			= clang++ -std=c++17
 FLAGS		= -g -Wall -Wextra -Werror
 LIB			= lib/lib.a
 
@@ -30,12 +30,12 @@ BIN			+= $(addprefix $(OBJ_DIR), $(OBJ:%.cpp=%.o))
 BIN_PATH	= ./bins/
 BINS		= $(addprefix $(BIN_PATH), $(BIN))
 
-.PHONY: all clean fclean re
+.PHONY: all test clean fclean re
 
 all: $(NAME)
 
 $(NAME): $(LIB) $(BIN_PATH) $(BIN_PATH)$(OBJ_DIR) $(BINS)
-	$(CC) $(FLAGS) $(BINS) $(LIB) -o $@
+	@ $(CC) $(FLAGS) $(BINS) $(LIB) -o $@
 
 $(BIN_PATH):
 	@ mkdir $@
@@ -59,17 +59,7 @@ fclean: clean
 
 re: fclean all
 
-test: $(name)
-	@ echo "\n ===== \033[0;32m DEGREE 0 - All Real Number Solution \033[0m ===== \n"
-	./$(NAME) -v "5 * X^0 = 5 * X^0"
-	@ echo "\n ===== \033[0;32m DEGREE 0 - No Solution \033[0m ===== \n"
-	./$(NAME) -v "4X^0 = 8X^0"
-	@ echo "\n ===== \033[0;32m DEGREE 1 \033[0m ===== \n"
-	./$(NAME) -v "5 = 4 + 7X"
-	@ echo "\n ===== \033[0;32m DEGREE 2 - Discriminant > 0 \033[0m ===== \n"
-	./$(NAME) -v "5 + 13X + 3X^2 = 1 + 0X"
-	@ echo "\n ===== \033[0;32m DEGREE 2 - Discriminant = 0 \033[0m ===== \n"
-	./$(NAME) -v "6 + 11X + 5X^2 = 1 + X^1"
-	@ echo "\n ===== \033[0;32m DEGREE 2 - Discriminant < 0 \033[0m ===== \n"
-	./$(NAME) -v "5 + 3X + 3X^2 = 1 + X^1"
-	@ echo
+test: all
+	@ $(CC) test/main.cpp $(LIB) -o tester
+	@ ./tester
+	@ rm -rf tester

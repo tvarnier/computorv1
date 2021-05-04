@@ -95,8 +95,8 @@ void    Equation::printExpression(list<Value> const& expr) const
                 cout << '+';
             if (count)
                 cout << ' ';
-            if (abs(it->getValue()) != 1 || it->getExponent() == 0)
-                cout << abs(it->getValue());
+            if (lib::fabs(it->getValue()) != 1 || it->getExponent() == 0)
+                cout << lib::fabs(it->getValue());
             if (it->getExponent())
             {
                 cout << m_variable;
