@@ -1,4 +1,4 @@
-# COMPUTORV1 [[Sujet](https://github.com/tvarnier/42/blob/master/algorithm/computorv1/subject.pdf)]
+# COMPUTORV1 [[Sujet](https://github.com/tvarnier/computorv1/blob/master/subject.pdf)]
 
 <br>
 
@@ -23,13 +23,13 @@ Il suffit ensuite de lancer commande `./computor [-v] <equation>`
 <br>
 
 <div>
-  <img src="https://github.com/tvarnier/42/blob/master/algorithm/computorv1/img/example.png">
+  <img src="https://github.com/tvarnier/computorv1/blob/master/img/example.png">
   <p align="center" font-size="x-small"><i>Exemples</i></p>
 </div>
 
 <br>
 
 <div>
-  <img src="https://github.com/tvarnier/42/blob/master/algorithm/computorv1/img/example_verbose.png">
+  <img src="https://github.com/tvarnier/computorv1/blob/master/img/example_verbose.png">
   <p align="center" font-size="x-small"><i>Résultat du programme avec l'option '-v'</i></p>
 </div>
